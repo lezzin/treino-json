@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="./earth.svg" />
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="./js/pesquisarCEP.js" defer></script>
+    <script src="./js/geradorFrase.js" defer></script>
+
+    <title>Teste de API's</title>
+</head>
+
+<body>
+    <section class="cep-container">
+        <h1>API de CEPS</h1>
+
+        <span id="mensagem"></span>
+
+        <form class="form">
+            <div class="content-items">
+                <label>Digite aqui o CEP</label><span id="contador"></span>
+            </div>
+            <input type="number" class="form-control text-center" id="cep" placeholder="CEP">
+
+            <label>Cidade</label>
+            <input type="text" class="form-control text-center" id="cidade" placeholder="Cidade">
+
+            <label>Estado</label>
+            <input type="text" class="form-control text-center" id="estado" placeholder="Estado">
+
+            <label>Logradouro/bairro</label>
+            <input type="text" class="form-control text-center" id="logradouro" placeholder="Logradouro">
+
+            <label>DDD</label>
+            <input type="text" class="form-control text-center" id="ddd" placeholder="DDD">
+        </form>
+    </section>
+
+    <section>
+        <div>
+            <h1>Gerador de frases</h1>
+
+            <span id="mensagem2"></span>
+
+            <div class="buttons">
+                <button class="btn btn-gera">Gerar frase</button>
+                <button class="btn btn-deleta">Apagar frases</button>
+            </div>
+
+            <div id="lista"></div>
+
+        </div>
+    </section>
+
+</body>
+
+
+</html>

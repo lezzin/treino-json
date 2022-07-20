@@ -16,15 +16,14 @@
 </head>
 
 <body>
-    <section class="cep-container">
+    <section>
         <h1>API de CEPS</h1>
 
         <span id="mensagem"></span>
+        <span id="contador"></span>
 
         <form class="form">
-            <div class="content-items">
-                <label>Digite aqui o CEP</label><span id="contador"></span>
-            </div>
+            <label>Digite aqui o CEP</label>
             <input type="number" class="form-control text-center" id="cep" placeholder="CEP">
 
             <label>Cidade</label>
@@ -38,6 +37,8 @@
 
             <label>DDD</label>
             <input type="text" class="form-control text-center" id="ddd" placeholder="DDD">
+
+            <button class="btn btn-submit">Pesquisar</button>
         </form>
     </section>
 

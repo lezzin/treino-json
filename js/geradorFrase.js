@@ -39,7 +39,7 @@ const gerarFrase = async () => {
     adicionarMensagem(frase);
 
     window.scrollTo(0, document.body.scrollHeight);
-    mensagemSpan.innerHTML = ''
+    mensagemSpan.innerHTML = '...'
 };
 
 window.addEventListener('load', atualizarStorage());;

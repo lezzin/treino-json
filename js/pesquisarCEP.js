@@ -4,6 +4,7 @@ const logradouro = document.querySelector("#logradouro");
 const mensagem = document.querySelector("#mensagem");
 const contador = document.querySelector("#contador");
 
+const form = document.querySelector(".form");
 const cepInput = document.querySelector("#cep");
 const ddd = document.querySelector("#ddd");
 
@@ -42,24 +43,27 @@ const pesquisaCep = async () => {
     const endereco = await dados.json();
 
     if (endereco.hasOwnProperty('error') || endereco.erro == 'true') {
-        mensagem.innerHTML = 'CEP não encontrado, preencha o input com um CEP válido';
+        mensagem.innerHTML = "CEP não encontrado, preencha o input com um CEP válido";
     } else if (dados.status == 200) {
         preencherFormulario(endereco);
-        mensagem.innerHTML = '';
+        mensagem.innerHTML = "...";
     }
 };
 
-cepInput.addEventListener("keydown", function (e) {
-    var numCaracteres = cepInput.value.length;
-    if (e.which == 13) {
-        if (numCaracteres < 8 || numCaracteres > 8) {
-            mensagem.innerHTML = "Preencha corretamente este campo (8 números)";
-        } else {
-            pesquisaCep()
-        }
-    }
-});
-cepInput.addEventListener("input", function () {
+cepInput.addEventListener("input", function (e) {
     var numCaracteres = cepInput.value.length;
     contador.innerHTML = `Número de caracteres: ${numCaracteres}`;
+    if (numCaracteres != 8) {
+        mensagem.innerHTML = "Preencha corretamente este campo (8 números)";
+    } else {
+        mensagem.innerHTML = "...";
+    }
 });
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault()
+    var numCaracteres = cepInput.value.length;
+    if (numCaracteres == 8) {
+        pesquisaCep()
+    }
+})
